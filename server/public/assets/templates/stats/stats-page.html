@@ -1,0 +1,19 @@
+<div class="row well well-lg">
+  <h1>Stats</h1>
+    <div>
+      <ul class="nav nav-tabs">
+        <li ng-class="{active: tabIsSet(1)}"><a href ng-click="setTab(1)">Matches</a></li>
+      </ul>
+    </div>
+    <div class="rc-panel" ng-show="tabIsSet(1)">
+      <div class="panel-body">
+        <p>Matches Content</p>
+        <ul>
+          <li>Team 1</li>
+          <div ng-repeat="match in matches">
+          {{match.team1}}
+          </div>
+        </ul>
+      </div>
+    </div>
+</div>
