@@ -1,8 +1,16 @@
-.rc-panel {
+.panel {
   margin-bottom: 20px;
   background-color: #fff;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   border-radius: 0px 0px 4px 4px;
+}
+.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    color: #555;
+    cursor: pointer;
+    background-color: #ccc;
+}
+.rc-match-buttons>button {
+  margin: 8px 0px 8px 8px;
 }

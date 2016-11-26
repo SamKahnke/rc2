@@ -10,11 +10,18 @@
   </head>
   <body>
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/#/">Rocket Colosseum</a>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/#/">Rocket Colosseum</a>
+            </div>
+            <rc-page-nav></rc-page-nav>
+          </div>
+          <div class="col-md-6">
+            <rc-match-buttons></rc-match-buttons>
+          </div>
         </div>
-        <rc-page-nav></rc-page-nav>
       </div>
     </nav>
     <div ng-view class="container"></div>
@@ -31,6 +38,7 @@
 
     <!-- Directive Scripts  -->
     <script src="scripts/directive-scripts/rcPageNav.js"></script>
+    <script src="scripts/directive-scripts/rcMatchButtons.js"></script>
 
     <!-- Controllers  -->
     <script src="scripts/controllers/statsPageController.js"></script>
