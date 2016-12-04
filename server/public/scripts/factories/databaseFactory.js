@@ -1,22 +1,20 @@
-angular.module('RocketColosseum').factory('DatabaseFactory', function($http){
-  function retrieveMatches() {
-    console.log('retrieveMatches is running in factory');
-    var promise = $http.get('/matches');
+angular.module('RocketColosseum').factory('DatabaseFactory', function ($http) {
+  var matches;
+
+  function factoryRefreshMatches() {
+    var promise = $http.get('/matches').then(function (response) {
+      matches = response.data;
+    });
     return promise;
   };
-  console.log('DB Factory is running');
-  // function retrievePlayers() {
-  //   var promise = $http.get('/players');
-  //   return promise;
-  // };
 
   var publicApi = {
-    getMatches: function () {
-      return retrieveMatches();
+    refreshMatches: function () {
+      return factoryRefreshMatches();
     },
-    // getPlayers: function () {
-    //   return retrievePlayers;
-    // }
+    getMatches: function () {
+      return matches;
+    },
   };
 
   return publicApi;

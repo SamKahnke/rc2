@@ -4,7 +4,7 @@ angular.module("RocketColosseum").directive('rcPageNav', function(){
     restrict: "E",
     templateUrl: "assets/templates/directives/rcPageNav.html",
     controller: function($scope, $location){
-      $scope.isPage = function(pageName){
+      $scope.isPage = function (pageName) {
         return new RegExp("/" + pageName + "($|/)").test($location.path());
       };
     }

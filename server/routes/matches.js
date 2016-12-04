@@ -1,21 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
-var connectionString = 'postgres://localhost:5432';
-// ?user=postgres&password=password
-// [dbname='db_rc', host='localhost', user='postgres', password='password', port='5432']
+var connectionString = 'postgres://postgres:password@localhost:5432/db_rc';
+
 router.get('/', function (req, res) {
   pg.connect(connectionString, function (err, client, done) {
     if (err) {
       res.sendStatus(500);
     }
 
-    client.query('SELECT * FROM matches', function (err, result) {
+    client.query('SELECT * FROM matches', function (err, response) {
       done();
-
-      console.log(result.rows);
-
-      res.send(result.rows);
+      console.log(response.rows);
+      res.send(response.rows);
     });
   });
 });
@@ -25,21 +22,23 @@ router.post('/', function (req, res) {
   pg.connect(connectionString, function (err, client, done) {
     if (err) {
       res.sendStatus(500);
-    }
+  }
 
-    client.query('INSERT INTO matches (team1) ' +
-                  'VALUES ($1)',
-                   [matches.team1],
-                 function (err, result) {
-                   done();
+  client.query('INSERT INTO matches (team1, team2, t1_p1_score, t1_p2_score, t1_p3_score, t2_p1_score, ' +
+                  't2_p2_score, t2_p3_score, t1_p1, t1_p2, t1_p3, t2_p1, t2_p2, t2_p3, match_date) ' +
+                  'VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)',
+                  [match.team1, match.team2, match.t1_p1_score, match.t1_p2_score, match.t1_p3_score, match.t2_p1_score,
+                  match.t2_p2_score, match.t2_p3_score, match.t1_p1, match.t1_p2, match.t1_p3, match.t2_p1, match.t2_p2, match.t2_p3, match.match_date],
+               function (err, result) {
+                 done();
 
-                   if (err) {
-                     res.sendStatus(500);
-                     return;
-                   }
+                 if (err) {
+                   res.sendStatus(500);
+                   return;
+                 }
 
-                   res.sendStatus(201);
-                 });
+                 res.sendStatus(201);
+               });
   });
 });
 

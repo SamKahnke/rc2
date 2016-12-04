@@ -6,6 +6,10 @@
   border-bottom: 1px solid #ccc;
   border-radius: 0px 0px 4px 4px;
 }
+.rc-details-panel {
+  border-top: 1px solid #ccc;
+  border-radius: 4px;
+}
 .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
     color: #555;
     cursor: pointer;
