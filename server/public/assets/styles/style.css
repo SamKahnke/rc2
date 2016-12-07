@@ -1,3 +1,4 @@
+/*Modified Bootstrap Classes*/
 .panel {
   margin-bottom: 20px;
   background-color: #fff;
@@ -6,15 +7,20 @@
   border-bottom: 1px solid #ccc;
   border-radius: 0px 0px 4px 4px;
 }
+.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+  color: #555;
+  cursor: pointer;
+  background-color: #ccc;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: none;
+}
+
+/*Custom Classes*/
 .rc-details-panel {
   border-top: 1px solid #ccc;
   border-radius: 4px;
 }
-.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
-    color: #555;
-    cursor: pointer;
-    background-color: #ccc;
-}
-.rc-match-buttons>button {
+.rc-navbar-buttons>a {
   margin: 8px 0px 8px 8px;
 }

@@ -1,11 +1,21 @@
-angular.module('RocketColosseum').config(function($routeProvider){
+angular.module('RocketColosseum').config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      redirectTo: '/stats'
+      redirectTo: '/stats',
     })
 
     .when('/stats', {
-      templateUrl: "assets/templates/stats/stats-page.html",
-      controller: "StatsPageController"
+      templateUrl: 'assets/templates/stats.html',
+      controller: 'StatsPageController',
+    })
+
+    .when('/schedule-match', {
+      templateUrl: 'assets/templates/scheduleMatch.html',
+      controller: 'ScheduleMatchController',
+    })
+
+    .when('/submit-match', {
+      templateUrl: 'assets/templates/submitMatch.html',
+      controller: 'SubmitMatchController',
     });
 });

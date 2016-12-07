@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html ng-app="RocketColosseum">
   <head>
+    <title>Rocket Colosseum</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Rocket Colosseum</title>
     <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles/bootstrap-theme.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
   </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="/#/">Rocket Colosseum</a>
-            </div>
-            <rc-page-nav></rc-page-nav>
-          </div>
-          <div class="col-md-6">
-            <rc-match-buttons></rc-match-buttons>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div ng-view class="container-fluid"></div>
 
-    <!-- Javascript Libraries  -->
-    <script src="scripts/vendors/jquery.min.js"></script>
+  <body id="index-page">
+
+    <div id="page-wrapper">
+      <nav id="top-navbar" class="navbar navbar-default">
+        <div class="container-fluid">
+          <rc-page-nav></rc-page-nav>
+          <rc-match-buttons></rc-match-buttons>
+        </div>
+      </nav>
+      <div id="main-content" ng-view class="container-fluid"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
     <script src="scripts/vendors/angular.min.js"></script>
+    <script src="scripts/vendors/ui-bootstrap.js"></script>
     <script src="scripts/vendors/angular-route.min.js"></script>
-    <script src="scripts/vendors/bootstrap.min.js"></script>
+    <script src="scripts/vendors/angular-animate.min.js"></script>
+    <script src="scripts/vendors/angular-sanitize.min.js"></script>
 
     <!-- App -->
     <script src="scripts/clientapp.js"></script>
     <script src="scripts/routes.js"></script>
-
-    <!-- Directive Scripts  -->
-    <script src="scripts/directive-scripts/rcPageNav.js"></script>
-    <script src="scripts/directive-scripts/rcMatchButtons.js"></script>
-
+    <!-- Directives  -->
+    <script src="scripts/directives/rcPageNav.js"></script>
+    <script src="scripts/directives/rcMatchButtons.js"></script>
     <!-- Controllers  -->
     <script src="scripts/controllers/statsPageController.js"></script>
-
+    <script src="scripts/controllers/scheduleMatchController.js"></script>
+    <script src="scripts/controllers/submitMatchController.js"></script>
     <!-- Factories -->
     <script src="scripts/factories/databaseFactory.js"></script>
 

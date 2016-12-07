@@ -1,1 +1,1 @@
-angular.module('RocketColosseum', ['ngRoute']);
+angular.module('RocketColosseum', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.bootstrap']);

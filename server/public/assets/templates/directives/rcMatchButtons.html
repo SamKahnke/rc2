@@ -1,4 +1,9 @@
-<form class="form-inline rc-match-buttons" style="float: right">
-  <button class="btn btn-success">Schedule a Match</button>
-  <button class="btn btn-success">Submit Match Results</button>
-</form>
+<div class="rc-navbar-buttons" style="float:right">
+
+  <a  ng-class="{'active': isPage('schedule-match')}"
+      href="#/schedule-match" role="button" class="btn btn-primary">Schedule a Match</a>
+
+  <a  ng-class="{'active': isPage('submit-match')}"
+      href="#/submit-match" role="button" class="btn btn-primary">Submit Match Results</a>
+
+</div>

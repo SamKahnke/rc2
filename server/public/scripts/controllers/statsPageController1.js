@@ -12,11 +12,12 @@
     var databaseFactory = DatabaseFactory;
 
     $scope.matches;
-    $scope.statRowId;
+    $scope.detailId;
 
     $scope.getMatches = (function () {
       databaseFactory.refreshMatches().then(function () {
         $scope.matches = databaseFactory.getMatches();
+        $scope.detailId = $scope.matches[0].id;
       });
     })();
 
@@ -33,12 +34,12 @@
     };
 
     // Active detail panel controls
-    $scope.isCollapsed = function (statRowId) {
-      return $scope.statRowId !== statRowId;
+    $scope.setDetails = function (detailId) {
+      $scope.detailId = detailId;
     };
 
-    $scope.expandDetails = function (statRowId) {
-      $scope.statRowId = $scope.isCollapsed(statRowId) ? statRowId : undefined;
+    $scope.currentDetails = function (detailId) {
+      return $scope.detailId === detailId;
     };
 
     // Table sort controls
