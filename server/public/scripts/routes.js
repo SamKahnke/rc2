@@ -1,21 +1,21 @@
-angular.module('RocketColosseum').config(function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      redirectTo: '/stats',
-    })
+(function () {
+  'use strict';
 
-    .when('/stats', {
-      templateUrl: 'assets/templates/stats.html',
-      controller: 'StatsPageController',
-    })
+  angular
+    .module('RocketColosseum')
+    .config(provideRoutes);
 
-    .when('/schedule-match', {
-      templateUrl: 'assets/templates/scheduleMatch.html',
-      controller: 'ScheduleMatchController',
-    })
+  provideRoutes.$inject = ['$routeProvider'];
 
-    .when('/submit-match', {
-      templateUrl: 'assets/templates/submitMatch.html',
-      controller: 'SubmitMatchController',
-    });
-});
+  function provideRoutes($routeProvider) {
+    $routeProvider
+      .when('/stats', {
+        templateUrl: 'templates/stats.html',
+        controller: 'StatsPageController',
+      })
+
+      .otherwise({
+        redirectTo: 'stats',
+      });
+  };
+})();

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="row">
   <div class="col-sm-12">
     <h1>Stats</h1>
@@ -34,27 +35,27 @@
           </tr>
         </table>
         <div ng-repeat-end uib-collapse="isCollapsed({{match.id}})">
-          <div class="panel" style="margin-top:0px">
+          <div class="panel" style="margin-top:0px; margin-bottom:0px; border:0px">
             <div class="panel-body">
               <div class="table-responsive">
-                <table class="table table-hover table-striped table-condensed" style="margin:0px">
+                <table class="table table-hover table-condensed" style="background-color:transparent; border-color:#fff; margin:0px">
                   <tr>
                     <th colspan="2" style="text-align:center">{{match.team1}} {{match.t1_p1_score + match.t1_p2_score + match.t1_p3_score}}</th>
                     <th colspan="2" style="text-align:center">{{match.team2}} {{match.t2_p1_score + match.t2_p2_score + match.t2_p3_score}}</th>
                   </tr>
-                  </tr>
+                  <tr>
                     <td>{{match.t1_p1}}</td>
                     <td>{{match.t1_p1_score}}</td>
                     <td>{{match.t2_p1}}</td>
                     <td>{{match.t2_p1_score}}</td>
-                  <tr>
                   </tr>
+                  <tr>
                     <td>{{match.t1_p2}}</td>
                     <td>{{match.t1_p2_score}}</td>
                     <td>{{match.t2_p2}}</td>
                     <td>{{match.t2_p2_score}}</td>
-                  <tr>
                   </tr>
+                  <tr>
                     <td>{{match.t1_p3}}</td>
                     <td>{{match.t1_p3_score}}</td>
                     <td>{{match.t2_p3}}</td>

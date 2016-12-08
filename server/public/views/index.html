@@ -4,20 +4,20 @@
     <title>Rocket Colosseum</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
 
   <body id="index-page">
 
     <div id="page-wrapper">
-      <nav id="top-navbar" class="navbar navbar-default">
-        <div class="container-fluid">
+      <div class="container-fluid">
+        <nav id="top-navbar" class="navbar navbar-default">
           <rc-page-nav></rc-page-nav>
           <rc-match-buttons></rc-match-buttons>
-        </div>
-      </nav>
-      <div id="main-content" ng-view class="container-fluid"></div>
+        </nav>
+      </div>
+      <div ng-view class="container content-wrapper"></div>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -28,7 +28,7 @@
     <script src="scripts/vendors/angular-sanitize.min.js"></script>
 
     <!-- App -->
-    <script src="scripts/clientapp.js"></script>
+    <script src="scripts/clientApp.js"></script>
     <script src="scripts/routes.js"></script>
     <!-- Directives  -->
     <script src="scripts/directives/rcPageNav.js"></script>

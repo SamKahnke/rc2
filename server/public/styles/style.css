@@ -1,0 +1,77 @@
+body {
+  background-color: #000C10;
+}
+
+.content-wrapper {
+  background-color: #202C30;
+}
+
+.rc-details-panel {
+}
+
+.rc-navbar-buttons {
+  padding: 8px 0px 8px 8px;
+}
+
+#top-navbar {
+  background-color: #000;
+  margin: 0px;
+  border-width: 0px 0px 2px;
+  border-color: #FA8000;
+  border-radius: 0px;
+  padding: 0px 100px 0px 100px;
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+#brand {
+
+}
+
+#brand a {
+  color: #FFDDBB;
+  font-size: 48px;
+  padding: 30px 30px 20px 0px;
+}
+
+#page-nav-tabs {
+  color: #EEE;
+}
+
+#page-nav-tabs a {
+  color: #FFBB90;
+  background-color: transparent;
+  margin: 20px 0px 0px 0px;
+  font-size: 24px;
+}
+/*Modified Bootstrap Classes*/
+.panel {
+  margin-bottom: 20px;
+  background-color: #FFEEDD;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background-color: #FFEEDD;
+}
+
+.nav-tabs>li>a:hover {
+  color: #555;
+  cursor: pointer;
+  background-color: #EEDDCC;
+}
+
+.navbar-nav {
+  background-color: transparent;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: none;
+}
+
+/*Custom*/

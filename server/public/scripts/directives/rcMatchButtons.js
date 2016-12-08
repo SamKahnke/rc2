@@ -9,7 +9,7 @@
     return {
       replace: true,
       restrict: 'E',
-      templateUrl: 'assets/templates/directives/rcMatchButtons.html',
+      templateUrl: 'templates/directives/rcMatchButtons.html',
       controller: function ($scope, $location) {
         $scope.isPage = function (pageName) {
           return new RegExp('/' + pageName + '($|/)').test($location.path());
