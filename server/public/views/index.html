@@ -11,13 +11,13 @@
   <body id="index-page">
 
     <div id="page-wrapper">
-      <div class="container-fluid">
-        <nav id="top-navbar" class="navbar navbar-default">
+      <nav id="top-navbar" class="navbar navbar-default">
+        <div class="container-fluid">
           <rc-page-nav></rc-page-nav>
           <rc-match-buttons></rc-match-buttons>
-        </nav>
-      </div>
-      <div ng-view class="container content-wrapper"></div>
+        </div>
+      </nav>
+      <div ng-view class="container-fluid content-wrapper"></div>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -26,7 +26,6 @@
     <script src="scripts/vendors/angular-route.min.js"></script>
     <script src="scripts/vendors/angular-animate.min.js"></script>
     <script src="scripts/vendors/angular-sanitize.min.js"></script>
-
     <!-- App -->
     <script src="scripts/clientApp.js"></script>
     <script src="scripts/routes.js"></script>
@@ -39,6 +38,7 @@
     <script src="scripts/controllers/submitMatchController.js"></script>
     <!-- Factories -->
     <script src="scripts/factories/databaseFactory.js"></script>
+    <script src="scripts/factories/tableSortFactory.js"></script>
 
   </body>
 </html>

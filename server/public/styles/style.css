@@ -14,16 +14,12 @@ body {
 }
 
 #top-navbar {
-  background-color: #000;
-  margin: 0px;
+  background-color: #000C10;
+  margin-bottom: 0px;
   border-width: 0px 0px 2px;
-  border-color: #FA8000;
+  border-color: #FF8000;
   border-radius: 0px;
-  padding: 0px 100px 0px 100px;
-}
-
-.container-fluid {
-  padding: 0px;
+  padding: 0px 15px 0px 15px;
 }
 
 #brand {
@@ -31,21 +27,23 @@ body {
 }
 
 #brand a {
-  color: #FFDDBB;
+  color: #FFE5CC;
   font-size: 48px;
-  padding: 30px 30px 20px 0px;
-}
-
-#page-nav-tabs {
-  color: #EEE;
+  padding: 30px 60px 25px 0px;
 }
 
 #page-nav-tabs a {
-  color: #FFBB90;
+  font-style: italic;
+  color: #FFE5CC;
   background-color: transparent;
   margin: 20px 0px 0px 0px;
   font-size: 24px;
 }
+
+#page-nav-tabs a:hover, #page-nav-tabs li.active a {
+  color: #FFB060;
+}
+
 /*Modified Bootstrap Classes*/
 .panel {
   margin-bottom: 20px;

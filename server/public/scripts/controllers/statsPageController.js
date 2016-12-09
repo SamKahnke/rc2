@@ -5,20 +5,27 @@
     .module('RocketColosseum')
     .controller('StatsPageController', StatsPageController);
 
-  StatsPageController.$inject = ['DatabaseFactory', '$scope'];
+  StatsPageController.$inject = ['DatabaseFactory', 'TableSortFactory', '$scope'];
 
-  function StatsPageController(DatabaseFactory, $scope) {
+  function StatsPageController(DatabaseFactory, TableSortFactory, $scope) {
 
     var databaseFactory = DatabaseFactory;
+    var tableSortFactory = TableSortFactory;
 
     $scope.matches;
     $scope.statRowId;
+    $scope.columnSortValue;
 
     $scope.getMatches = (function () {
       databaseFactory.refreshMatches().then(function () {
         $scope.matches = databaseFactory.getMatches();
       });
     })();
+
+    // Table sort controls
+    $scope.sortByColumn = function (column) {
+      $scope.columnSortValue = tableSortFactory.sortByColumn(column);
+    };
 
     // Active tab controls
     const DEFAULT_TAB_ID = 1;
@@ -39,23 +46,6 @@
 
     $scope.expandDetails = function (statRowId) {
       $scope.statRowId = $scope.isCollapsed(statRowId) ? statRowId : undefined;
-    };
-
-    // Table sort controls
-    const DEFAULT_COLUMN = '-match_date';
-    const DESCEND_PATTERN = /^-/;
-
-    var previousCol = DEFAULT_COLUMN;
-    $scope.sorterColumn = DEFAULT_COLUMN;
-
-    var reverseOrder = function () {
-      return DESCEND_PATTERN.test(previousCol) ? previousCol.replace('-', '') : ('-' + previousCol);
-    };
-
-    $scope.sortByColumn = function (column) {
-      column = (column === previousCol) ? reverseOrder() : column;
-      $scope.sorterColumn = column;
-      previousCol = column;
     };
   }
 })();

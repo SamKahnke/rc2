@@ -14,6 +14,11 @@
         controller: 'StatsPageController',
       })
 
+      .when('/calendar', {
+        templateUrl: 'templates/calendar.html',
+        controller: 'CalendarPageController',
+      })
+
       .otherwise({
         redirectTo: 'stats',
       });
