@@ -15,7 +15,7 @@
     <div class="panel" ng-show="currentTab(1)">
       <div class="panel-body">
         <div class="table-responsive">
-          <table class="table table-hover table-striped table-condensed" style="table-layout:fixed; margin:0px">
+          <table class="table table-hover table-striped table-condensed">
             <tr>
               <th style="cursor:pointer" ng-click="sortByColumn('team1')">Team Name</th>
               <th>Score</th>
@@ -25,8 +25,8 @@
             </tr>
           </table>
         </div>
-        <table class="table table-hover table-striped table-condensed" ng-repeat-start="match in matches | orderBy:columnSortValue" style="table-layout:fixed; margin:0px">
-          <tr ng-click="expandDetails(match.id)" style="cursor:pointer">
+        <table class="table table-hover table-striped table-condensed" ng-repeat-start="match in matches | orderBy:columnSortValue">
+          <tr ng-click="expandDetails(match.id)" class="clickable-row">
             <td>{{match.team1}}</td>
             <td>{{match.t1_p1_score + match.t1_p2_score + match.t1_p3_score}}</td>
             <td>{{match.team2}}</td>
@@ -35,13 +35,13 @@
           </tr>
         </table>
         <div ng-repeat-end uib-collapse="isCollapsed({{match.id}})">
-          <div class="panel" style="margin-top:0px; margin-bottom:0px; border:0px">
+          <div class="panel">
             <div class="panel-body">
               <div class="table-responsive">
-                <table class="table table-hover table-condensed" style="background-color:transparent; border-color:#fff; margin:0px">
+                <table class="table table-hover table-condensed">
                   <tr>
-                    <th colspan="2" style="text-align:center">{{match.team1}} {{match.t1_p1_score + match.t1_p2_score + match.t1_p3_score}}</th>
-                    <th colspan="2" style="text-align:center">{{match.team2}} {{match.t2_p1_score + match.t2_p2_score + match.t2_p3_score}}</th>
+                    <th class="th-center" colspan="2">{{match.team1}} {{match.t1_p1_score + match.t1_p2_score + match.t1_p3_score}}</th>
+                    <th class="th-center" colspan="2">{{match.team2}} {{match.t2_p1_score + match.t2_p2_score + match.t2_p3_score}}</th>
                   </tr>
                   <tr>
                     <td>{{match.t1_p1}}</td>
