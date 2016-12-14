@@ -1,14 +1,18 @@
-/*General*/
+/*********** General ***********/
 body {
   background-color: #000c10;
 }
 
-.container-fluid {
-  padding: 0 30px;
+h1 {
+  color: #f92;
 }
 
 #view-wrapper {
   background-color: #202c30;
+}
+
+.container-fluid {
+  padding: 0 30px;
 }
 
 .btn.active,
@@ -59,10 +63,6 @@ body {
   border-width: 0px;
 }
 
-.nav-tabs>li>a {
-
-}
-
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
@@ -75,7 +75,7 @@ body {
   background-color: #edc;
 }
 
-/*Top Navbar*/
+/*********** Top Navbar ***********/
 #top-navbar {
   background-color: #000c10;
   margin-bottom: 0px;
@@ -90,10 +90,6 @@ body {
   font-size: 48px;
   line-height: 1;
   padding: 0 25px 0 0;
-}
-
-.navbar-nav {
-  background-color: transparent;
 }
 
 #page-nav-tabs a {
@@ -115,6 +111,11 @@ body {
   margin-left: 6px;
 }
 
+.navbar-nav {
+  background-color: transparent;
+}
+
+/*********** Tables ***********/
 .table {
   table-layout: fixed;
   margin: 0;

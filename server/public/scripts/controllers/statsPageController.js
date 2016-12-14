@@ -17,17 +17,18 @@
     $scope.columnSortValue;
 
     $scope.getMatches = (function () {
-      databaseFactory.refreshMatches().then(function () {
-        $scope.matches = databaseFactory.getMatches();
-      });
+      databaseFactory.refreshMatches()
+        .then(function () {
+          $scope.matches = databaseFactory.getMatches();
+        });
     })();
 
-    // Table sort controls
+    // Sort table on click
     $scope.sortByColumn = function (column) {
       $scope.columnSortValue = tableSortFactory.sortByColumn(column);
     };
 
-    // Active tab controls
+    // Track active tab to apply style
     const DEFAULT_TAB_ID = 1;
     $scope.tab = DEFAULT_TAB_ID;
 
@@ -39,7 +40,7 @@
       return $scope.tab === tabId;
     };
 
-    // Active detail panel controls
+    // Expand and collapse panels
     $scope.isCollapsed = function (statRowId) {
       return $scope.statRowId !== statRowId;
     };

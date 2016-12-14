@@ -20,25 +20,32 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   console.log('Post req.body: ', req.body);
   pg.connect(connectionString, function (err, client, done) {
+    var match = req.body;
+
     if (err) {
       res.sendStatus(500);
-  }
+    }
 
-  client.query('INSERT INTO matches (team1, team2, t1_p1_score, t1_p2_score, t1_p3_score, t2_p1_score, ' +
-                  't2_p2_score, t2_p3_score, t1_p1, t1_p2, t1_p3, t2_p1, t2_p2, t2_p3, match_date) ' +
-                  'VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)',
-                  [match.team1, match.team2, match.t1_p1_score, match.t1_p2_score, match.t1_p3_score, match.t2_p1_score,
-                  match.t2_p2_score, match.t2_p3_score, match.t1_p1, match.t1_p2, match.t1_p3, match.t2_p1, match.t2_p2, match.t2_p3, match.match_date],
-               function (err, result) {
-                 done();
+    client.query('INSERT INTO matches ' +
+                '(team1, team2, t1_p1_score, t1_p2_score, t1_p3_score, t2_p1_score, ' +
+                't2_p2_score, t2_p3_score, t1_p1, t1_p2, t1_p3, t2_p1, t2_p2, t2_p3, match_date) ' +
+                'VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)',
+                [match.team1, match.team2, match.t1_p1_score, match.t1_p2_score,
+                match.t1_p3_score, match.t2_p1_score, match.t2_p2_score,
+                match.t2_p3_score, match.t1_p1, match.t1_p2, match.t1_p3,
+                match.t2_p1, match.t2_p2, match.t2_p3, match.match_date,
+                ],
 
-                 if (err) {
-                   res.sendStatus(500);
-                   return;
-                 }
+                function (err, result) {
+                  done();
 
-                 res.sendStatus(201);
-               });
+                  if (err) {
+                    res.sendStatus(500);
+                    return;
+                  }
+
+                  res.sendStatus(201);
+                });
   });
 });
 
