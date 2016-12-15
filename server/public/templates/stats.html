@@ -28,20 +28,20 @@
         <table class="table table-hover table-striped table-condensed" ng-repeat-start="match in matches | orderBy:columnSortValue">
           <tr ng-click="expandDetails(match.id)" class="clickable-row">
             <td>{{match.team1}}</td>
-            <td>{{match.t1_p1_score + match.t1_p2_score + match.t1_p3_score}}</td>
+            <td>{{match.team1Score}}</td>
             <td>{{match.team2}}</td>
-            <td>{{match.t2_p1_score + match.t2_p2_score + match.t2_p3_score}}</td>
+            <td>{{match.team2Score}}</td>
             <td>{{match.match_date | date}}</td>
           </tr>
         </table>
         <div ng-repeat-end uib-collapse="isCollapsed({{match.id}})">
-          <div class="panel">
+          <div class="panel collapsing-panel">
             <div class="panel-body">
               <div class="table-responsive">
                 <table class="table table-hover table-condensed">
                   <tr>
-                    <th class="th-center" colspan="2">{{match.team1}} {{match.t1_p1_score + match.t1_p2_score + match.t1_p3_score}}</th>
-                    <th class="th-center" colspan="2">{{match.team2}} {{match.t2_p1_score + match.t2_p2_score + match.t2_p3_score}}</th>
+                    <th class="th-center" colspan="2">{{match.team1}} {{match.team1Score}}</th>
+                    <th class="th-center" colspan="2">{{match.team2}} {{match.team2Score}}</th>
                   </tr>
                   <tr>
                     <td>{{match.t1_p1}}</td>

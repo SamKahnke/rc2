@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<h1>Hello Submit Match Page!</h1>
-<form id="matchForm">
-  <label for="team1">Team 1</label>
-  <input ng-model="match.team1" type="text" id="team1" name="team1" />
+<h1>Submit Match</h1>
+<div class="container">
+  <form id="matchForm" class="form-horizontal">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Team One</h2>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <input ng-model="match.team1" class="form-control" type="text" id="team1" name="team1" placeholder="Team Name" />
+            </div>
+            <br>
+            <div class="form-group">
+              <input ng-model="match.t1_p1" class="form-control" type="text" id="t1_p1" name="t1_p1" placeholder="Captain" />
+            </div>
+            <div class="form-group">
+              <input ng-model="match.t1_p1_score" class="form-control" type="number" id="t1_p1_score" name="t1_p1_score" placeholder="Score" />
+            </div>
+            <br>
+            <div class="form-group">
+              <input ng-model="match.t1_p2" class="form-control" type="text" id="t1_p2" name="t1_p2" placeholder="Player" />
+            </div>
+            <div class="form-group">
+              <input ng-model="match.t1_p2_score" class="form-control" type="number" id="t1_p2_score" name="t1_p2_score" placeholder="Score" />
+            </div>
+            <br>
+            <div class="form-group">
+              <input ng-model="match.t1_p3" class="form-control" type="text" id="t1_p3" name="t1_p3" placeholder="Player" />
+            </div>
+            <div class="form-group">
+              <input ng-model="match.t1_p3_score" class="form-control" type="number" id="t1_p3_score" name="t1_p3_score" placeholder="Score" />
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <label for="t1_p1">Captain</label>
-  <input ng-model="match.t1_p1" type="text" id="t1_p1" name="t1_p1" />
-
-  <label for="t1_p1_score">Score</label>
-  <input ng-model="match.t1_p1_score" type="number" id="t1_p1_score" name="t1_p1_score" />
-
-  <label for="t1_p2">Player</label>
-  <input ng-model="match.t1_p2" type="text" id="t1_p2" name="t1_p2" />
-
-  <label for="t1_p2_score">Score</label>
-  <input ng-model="match.t1_p2_score" type="number" id="t1_p2_score" name="t1_p2_score" />
-
-  <label for="t1_p3">Player</label>
-  <input ng-model="match.t1_p3" type="text" id="t1_p3" name="t1_p3" />
-
-  <label for="t1_p3_score">Score</label>
-  <input ng-model="match.t1_p3_score" type="number" id="t1_p3_score" name="t1_p3_score" />
-
-  <label for="team2">Team 2</label>
-  <input ng-model="match.team2" type="text" id="team2" name="team2" />
-
-  <label for="t2_p1">Captain</label>
-  <input ng-model="match.t2_p1" type="text" id="t2_p1" name="t2_p1" />
-
-  <label for="t2_p1_score">Score</label>
-  <input ng-model="match.t2_p1_score" type="number" id="t2_p1_score" name="t2_p1_score" />
-
-  <label for="t2_p2">Player</label>
-  <input ng-model="match.t2_p2" type="text" id="t2_p2" name="t2_p2" />
-
-  <label for="t2_p2_score">Score</label>
-  <input ng-model="match.t2_p2_score" type="number" id="t2_p2_score" name="t2_p2_score" />
-
-  <label for="t2_p3">Player</label>
-  <input ng-model="match.t2_p3" type="text" id="t2_p3" name="t2_p3" />
-
-  <label for="t2_p3_score">Score</label>
-  <input ng-model="match.t2_p3_score" type="number" id="t2_p3_score" name="t2_p3_score" />
-
-  <label for="match_date">Match Date</label>
-  <input ng-model="match.match_date" type="date" id="match_date" name="match_date" />
-
-  <button id="matchSubmit" type="submit" ng-click="submitMatch(match)">Submit</button>
-</form>
+      <div class="col-md-5 col-md-offset-2">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Team Two</h2>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <input ng-model="match.team2" class="form-control" type="text" id="team2" name="team2" placeholder="Team Name" />
+            </div>
+            <br>
+            <div class="form-group">
+              <input ng-model="match.t2_p1" class="form-control" type="text" id="t2_p1" name="t2_p1" placeholder="Captain" />
+            </div>
+            <div class="form-group">
+              <input ng-model="match.t2_p1_score" class="form-control" type="number" id="t2_p1_score" name="t2_p1_score" placeholder="Score" />
+            </div>
+            <br>
+            <div class="form-group">
+              <input ng-model="match.t2_p2" class="form-control" type="text" id="t2_p2" name="t2_p2" placeholder="Player" />
+            </div>
+            <div class="form-group">
+              <input ng-model="match.t2_p2_score" class="form-control" type="number" id="t2_p2_score" name="t2_p2_score" placeholder="Score" />
+            </div>
+            <br>
+            <div class="form-group">
+              <input ng-model="match.t2_p3" class="form-control" type="text" id="t2_p3" name="t2_p3" placeholder="Player" />
+            </div>
+            <div class="form-group">
+              <input ng-model="match.t2_p3_score" class="form-control" type="number" id="t2_p3_score" name="t2_p3_score" placeholder="Score" />
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-body">
+            <div class="form-group">
+              <input ng-model="match.match_date" class="form-control" type="date" id="match_date" name="match_date" placeholder="Match Date" />
+              <br>
+              <button id="matchSubmit" class="btn btn-primary" type="submit" ng-click="submitMatch(match)">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
