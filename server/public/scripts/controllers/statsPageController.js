@@ -21,9 +21,8 @@
         .then(function () {
           $scope.matches = databaseFactory.getMatches();
           for (var i = 0, l = $scope.matches.length; i < l; i++) {
-            var m = $scope.matches[i]
-            m.team1Score = m.t1_p1_score + m.t1_p2_score + m.t1_p3_score;
-            m.team2Score = m.t2_p1_score + m.t2_p2_score + m.t2_p3_score;
+            $scope.matches[i].team1Score = $scope.matches[i].t1_p1_score + $scope.matches[i].t1_p2_score + $scope.matches[i].t1_p3_score;
+            $scope.matches[i].team2Score = $scope.matches[i].t2_p1_score + $scope.matches[i].t2_p2_score + $scope.matches[i].t2_p3_score;
           }
         });
     })();
