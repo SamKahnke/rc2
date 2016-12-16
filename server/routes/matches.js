@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var connectionString = process.env.DATABASE_URL;
+pg.defaults.ssl = true;
 
 router.get('/', function (req, res) {
   pg.connect(process.env.DATABASE_URL, function (err, client, done) {
