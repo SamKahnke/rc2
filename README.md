@@ -5,9 +5,9 @@
 
 <!-- toc -->
 ## Table of Contents
-  1. [Introduction](#Introduction)
-  1. [Current Features](#Current Features)
-  1. [Get Started](#Get Started)
+  1. [Introduction](#introduction)
+  1. [Current Features](#current-features)
+  1. [Get Started](#get-started)
 
 <!-- toc stop -->
 ## Introduction
