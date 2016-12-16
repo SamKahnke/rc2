@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
-var connectionString = 'postgres://postgres:password@localhost:5432/db_rc';
+var connectionString = process.env.DATABASE_URL;
 
 router.get('/', function (req, res) {
   pg.connect(connectionString, function (err, client, done) {
