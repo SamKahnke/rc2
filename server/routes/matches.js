@@ -4,7 +4,7 @@ var pg = require('pg');
 var connectionString = process.env.DATABASE_URL;
 
 router.get('/', function (req, res) {
-  pg.connect(connectionString, function (err, client, done) {
+  pg.connect(process.env.DATABASE_URL, function (err, client, done) {
     if (err) {
       res.sendStatus(500);
     }
