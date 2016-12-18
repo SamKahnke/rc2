@@ -1,19 +1,19 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var path = require('path');
-var matches = require('./routes/matches');
+const EXPRESS = require('express');
+const APP = EXPRESS();
+const BODY_PARSER = require('body-parser');
+const PATH = require('path');
+const MATCHES = require('./routes/matches');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/matches', matches);
+APP.use(BODY_PARSER.json());
+APP.use(BODY_PARSER.urlencoded({ extended: true }));
+APP.use('/matches', MATCHES);
 
-app.get('/*', function (req, res) {
-  var file = req.params[0] || '/views/index.html';
-  res.sendFile(path.join(__dirname, './public', file));
+APP.get('/*', function (req, res) {
+  let file = req.params[0] || '/views/index.html';
+  res.sendFile(PATH.join(__dirname, './public', file));
 });
 
-app.set('port', process.env.PORT || 3000);
-app.listen(app.get('port'), function () {
-  console.log('Listening on port ', app.get('port'));
+APP.set('port', process.env.PORT || 3000);
+APP.listen(APP.get('port'), function () {
+  console.log('Listening on port ', APP.get('port'));
 });
