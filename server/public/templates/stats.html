@@ -6,42 +6,41 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-7">
+  <div class="col-md-8 col-md-offset-2">
     <ul class="nav nav-tabs">
       <li ng-class="{'active': currentTab(1)}"><a href ng-click="setTab(1)">Matches</a></li>
       <li ng-class="{'active': currentTab(2)}"><a href ng-click="setTab(2)">Players</a></li>
     </ul>
-
     <div class="panel" ng-show="currentTab(1)">
       <div class="panel-body">
         <div class="table-responsive">
-          <table class="table table-hover table-striped table-condensed">
-            <tr>
-              <th style="cursor:pointer" ng-click="sortByColumn('team1')">Team Name</th>
-              <th>Score</th>
-              <th style="cursor:pointer" ng-click="sortByColumn('team2')">Team Name</th>
-              <th>Score</th>
-              <th style="cursor:pointer" ng-click="sortByColumn('-match_date')">Date</th>
+          <table class="table table-striped table-condensed">
+            <tr class="clickable">
+              <th ng-click="sortByColumn('team1')">Team Name</th>
+              <th ng-click="sortByColumn('-team1Score')">Score</th>
+              <th ng-click="sortByColumn('team2')">Team Name</th>
+              <th ng-click="sortByColumn('-team2Score')">Score</th>
+              <th ng-click="sortByColumn('-match_date')">Date</th>
             </tr>
           </table>
         </div>
-        <table class="table table-hover table-striped table-condensed" ng-repeat-start="match in matches | orderBy:columnSortValue">
-          <tr ng-click="expandDetails(match.id)" class="clickable-row">
-            <td>{{match.team1}}</td>
-            <td>{{match.team1Score}}</td>
-            <td>{{match.team2}}</td>
-            <td>{{match.team2Score}}</td>
-            <td>{{match.match_date | date}}</td>
-          </tr>
-        </table>
-        <div ng-repeat-end uib-collapse="isCollapsed({{match.id}})">
-          <div class="panel collapsing-panel">
-            <div class="panel-body">
-              <div class="table-responsive">
-                <table class="table table-hover table-condensed">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped table-condensed" ng-repeat-start="match in matches | orderBy:columnSortValue">
+            <tr ng-click="expandDetails(match.id)" class="clickable">
+              <td>{{match.team1}}</td>
+              <td>{{match.team1Score}}</td>
+              <td>{{match.team2}}</td>
+              <td>{{match.team2Score}}</td>
+              <td>{{match.match_date | date}}</td>
+            </tr>
+          </table>
+          <div ng-repeat-end uib-collapse="isCollapsed({{match.id}})">
+            <div class="panel collapsing-panel">
+              <div class="panel-body">
+                <table class="table table-condensed">
                   <tr>
-                    <th class="th-center" colspan="2">{{match.team1}}   {{match.team1Score}}</th>
-                    <th class="th-center" colspan="2">{{match.team2}}   {{match.team2Score}}</th>
+                    <th class="th-details" colspan="2">{{match.team1}} - {{match.team1Score}}</th>
+                    <th class="th-details" colspan="2">{{match.team2}} - {{match.team2Score}}</th>
                   </tr>
                   <tr>
                     <td>{{match.t1_p1}}</td>
@@ -69,4 +68,5 @@
       </div>
     </div>
   </div>
+  <div id="empty-row" class="col-md-2">
 </div>
