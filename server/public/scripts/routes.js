@@ -29,7 +29,6 @@
         controller: 'SubmitMatchController',
       })
 
-
       .otherwise({
         redirectTo: 'stats',
       });

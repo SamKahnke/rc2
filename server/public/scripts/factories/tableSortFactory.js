@@ -9,22 +9,25 @@
     const DEFAULT_COLUMN = '-match_date';
     const DESCEND_PATTERN = /^-/;
 
-    var previousColumn = DEFAULT_COLUMN;
-    var factoryColumnSortValue = DEFAULT_COLUMN;
+    // Set initial column values to default string
+    let previousCol = DEFAULT_COLUMN;
+    let factoryColumnSortValue = DEFAULT_COLUMN;
 
-    var reverseOrder = function () {
-      return DESCEND_PATTERN.test(previousColumn) ? previousColumn.replace('-', '') : ('-' + previousColumn);
-    };
+    // Reverse sort order when user clicks the same column repeatedly
+    let reverseOrder = () =>
+      DESCEND_PATTERN.test(previousCol) ? previousCol.replace('-', '') : ('-' + previousCol);
 
-    var factorySortByColumn = function (column) {
-      column = (column === previousColumn) ? reverseOrder() : column;
+    // Reverse order if necessary, update previous column, return new sort value
+    let factorySortByColumn = (column) => {
+      column = (column === previousCol) ? reverseOrder() : column;
       factoryColumnSortValue = column;
-      previousColumn = column;
+      previousCol = column;
       return factoryColumnSortValue;
     };
 
-    var publicApi = {
-      sortByColumn: function (column) {
+    // Create public object for controllers to access
+    let publicApi = {
+      sortByColumn(column) {
         return factorySortByColumn(column);
       },
     };

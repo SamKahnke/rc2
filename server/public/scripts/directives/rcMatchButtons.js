@@ -10,11 +10,6 @@
       replace: true,
       restrict: 'E',
       templateUrl: 'templates/directives/rcMatchButtons.html',
-      controller: function ($scope, $location) {
-        $scope.isPage = function (pageName) {
-          return new RegExp('/' + pageName + '($|/)').test($location.path());
-        };
-      },
     };
   }
 })();

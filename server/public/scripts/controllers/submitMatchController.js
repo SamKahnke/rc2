@@ -9,15 +9,16 @@
 
   function SubmitMatchController(DatabaseFactory, $scope) {
 
-    var databaseFactory = DatabaseFactory;
+    // Factories
+    const DATABASE_FACTORY = DatabaseFactory;
 
+    // Initialize scope variables
     $scope.match = {};
 
-    $scope.submitMatch = function (match) {
-      databaseFactory.submitMatch(match)
-        .then(function () {
-          databaseFactory.refreshMatches();
-        });
+    // Post match, then refresh match list
+    $scope.submitMatch = (match) => {
+      DATABASE_FACTORY.submitMatch(match)
+        .then(() => DATABASE_FACTORY.refreshMatches());
       console.log(match);
     };
   };
