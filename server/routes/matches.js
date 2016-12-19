@@ -1,16 +1,15 @@
-var express = require('express');
-var router = express.Router();
-var pg = require('pg');
-var connectionString = process.env.DATABASE_URL;
-pg.defaults.ssl = true;
+const EXPRESS = require('express');
+const ROUTER = EXPRESS.Router();
+const PG = require('pg');
+const CONNECTION = 'postgres://postgres:password@localhost:5432/db_rc';
 
-router.get('/', function (req, res) {
-  pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+ROUTER.get('/', (req, res) => {
+  PG.connect(CONNECTION, (err, client, done) => {
     if (err) {
       res.sendStatus(500);
     }
 
-    client.query('SELECT * FROM matches', function (err, response) {
+    client.query('SELECT * FROM matches', (err, response) => {
       done();
       console.log(response.rows);
       res.send(response.rows);
@@ -18,11 +17,10 @@ router.get('/', function (req, res) {
   });
 });
 
-router.post('/', function (req, res) {
+ROUTER.post('/', (req, res) => {
   console.log('Post req.body: ', req.body);
-  pg.connect(connectionString, function (err, client, done) {
-    var match = req.body;
-
+  PG.connect(CONNECTION, (err, client, done) => {
+    let match = req.body;
     if (err) {
       res.sendStatus(500);
     }
@@ -37,7 +35,7 @@ router.post('/', function (req, res) {
                 match.t2_p1, match.t2_p2, match.t2_p3, match.match_date,
                 ],
 
-                function (err, result) {
+                (err, result) => {
                   done();
 
                   if (err) {
@@ -50,4 +48,4 @@ router.post('/', function (req, res) {
   });
 });
 
-module.exports = router;
+module.exports = ROUTER;

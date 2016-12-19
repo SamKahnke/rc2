@@ -74,7 +74,8 @@
             <div class="form-group">
               <input ng-model="match.match_date" class="form-control" type="date" id="match_date" name="match_date" placeholder="Match Date" />
               <br>
-              <button id="matchSubmit" class="btn btn-primary" type="submit" ng-click="submitMatch(match)">Submit</button>
+              <span ng-show="isSuccessfulPost" class="post-success-message">Match Submitted!</span><button id="matchSubmit" class="btn btn-primary" type="submit" ng-click="submitMatch(match)">Submit</button>
+              <br>
             </div>
           </div>
         </div>

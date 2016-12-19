@@ -10,7 +10,9 @@
       replace: true,
       restrict: 'E',
       templateUrl: 'templates/directives/rcPageNav.html',
-      controller: function ($scope, $location) {
+
+      // Track active page (for styling)
+      controller($scope, $location) {
         $scope.isPage = function (pageName) {
           return new RegExp('/' + pageName + '($|/)').test($location.path());
         };

@@ -9,22 +9,27 @@
     const DEFAULT_COLUMN = '-match_date';
     const DESCEND_PATTERN = /^-/;
 
-    var previousColumn = DEFAULT_COLUMN;
-    var factoryColumnSortValue = DEFAULT_COLUMN;
+    // Set initial column values to default string
+    let previousCol = DEFAULT_COLUMN;
+    let columnSortValue = DEFAULT_COLUMN;
 
-    var reverseOrder = function () {
-      return DESCEND_PATTERN.test(previousColumn) ? previousColumn.replace('-', '') : ('-' + previousColumn);
+    // Reverse sort order when user clicks the same column repeatedly
+    let _reverseOrder = () =>
+      DESCEND_PATTERN.test(previousCol) ? previousCol.replace('-', '') : ('-' + previousCol);
+
+    // Reverse order if necessary, update previous column, return new sort value
+    /* Note:  Columns will sort in ascending order by default when new column is clicked.
+              To default to descending, add "-" to front of 'column' argument in HTML. */
+    let factorySortByColumn = (column) => {
+      column = (column === previousCol) ? _reverseOrder() : column;
+      columnSortValue = column;
+      previousCol = column;
+      return columnSortValue;
     };
 
-    var factorySortByColumn = function (column) {
-      column = (column === previousColumn) ? reverseOrder() : column;
-      factoryColumnSortValue = column;
-      previousColumn = column;
-      return factoryColumnSortValue;
-    };
-
-    var publicApi = {
-      sortByColumn: function (column) {
+    // Create public object for controllers to access
+    let publicApi = {
+      sortByColumn(column) {
         return factorySortByColumn(column);
       },
     };
