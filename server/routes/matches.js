@@ -11,14 +11,12 @@ ROUTER.get('/', (req, res) => {
 
     client.query('SELECT * FROM matches', (err, response) => {
       done();
-      console.log(response.rows);
       res.send(response.rows);
     });
   });
 });
 
 ROUTER.post('/', (req, res) => {
-  console.log('Post req.body: ', req.body);
   PG.connect(CONNECTION, (err, client, done) => {
     let match = req.body;
 

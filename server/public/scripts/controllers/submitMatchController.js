@@ -24,8 +24,6 @@
           DATABASE_FACTORY.refreshMatches();
           $timeout(() => $scope.isSuccessfulPost = false, 1800);
         });
-
-      console.log(match);
     };
   };
 })();

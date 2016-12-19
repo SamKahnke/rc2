@@ -32,10 +32,8 @@
       let promise = $http.post('/matches', match)
         .then((response) => {
           if (response.status === 201 && response.status !== 500) {
-            console.log('Match added to database');
             isSuccessful = true;
           } else {
-            console.log('Error', response.data);
             isSuccessful = false;
           }
         });
