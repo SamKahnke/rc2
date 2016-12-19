@@ -22,9 +22,7 @@
         .then(() => {
           $scope.isSuccessfulPost = DATABASE_FACTORY.isSuccessfulPost();
           DATABASE_FACTORY.refreshMatches();
-          $timeout(function () {
-              $scope.isSuccessfulPost = false;
-            }, 2000);
+          $timeout(() => {$scope.isSuccessfulPost = false;}, 2000);
         });
 
       console.log(match);
