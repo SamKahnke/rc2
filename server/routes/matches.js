@@ -1,8 +1,8 @@
 const EXPRESS = require('express');
 const ROUTER = EXPRESS.Router();
 const PG = require('pg');
-const CONNECTION = process.env.DATABASE_URL;
-PG.defaults.ssl = true;
+const CONNECTION = process.env.DATABASE_URL || 'postgres://postgres:password@localhost:5432/db_rc';
+PG.defaults.ssl = process.env.DATABASE_URL ? true : false;
 
 ROUTER.get('/', (req, res) => {
   PG.connect(CONNECTION, (err, client, done) => {
