@@ -77,6 +77,11 @@ h2 {
   color: #fff;
 }
 
+.post-failure-message {
+  padding-left: 10px;
+  color: #fcc;
+}
+
 .panel {
   margin-bottom: 20px;
   background-color: var(--dark-bg--med);
@@ -115,7 +120,7 @@ h2 {
   border-color: var(--dark-bg--med);
 }
 
-/*********** Top Navbar ***********/
+/* ========================= TOP NAVBAR ========================= */
 #top-navbar {
   background-color: var(--dark-bg--dark);
   margin-bottom: 0px;
@@ -153,7 +158,7 @@ h2 {
   background-color: transparent;
 }
 
-/*********** Tables ***********/
+/* ========================= TABLES ========================= */
 .table {
   table-layout: fixed;
   margin: 0;
@@ -176,11 +181,25 @@ h2 {
     background-color: #ddd;
 }
 
-/*********** Forms ***********/
+/* ========================= FORMS ========================= */
+
 .form-group {
   margin-bottom: 2px;
 }
 
 .form-group button {
   float: right;
+}
+
+/*Authentication*/
+.has-error .form-control {
+  background-color: #fdd;
+}
+
+.has-success .form-control {
+  background-color: #e5ffe5;
+}
+
+.btn[disabled] {
+  opacity: .4;
 }

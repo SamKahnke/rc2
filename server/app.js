@@ -6,6 +6,7 @@ const MATCHES = require('./routes/matches');
 
 APP.use(BODY_PARSER.json());
 APP.use(BODY_PARSER.urlencoded({ extended: true }));
+
 APP.use('/matches', MATCHES);
 
 APP.get('/*', function (req, res) {
