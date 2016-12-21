@@ -2,6 +2,7 @@ const EXPRESS = require('express');
 const ROUTER = EXPRESS.Router();
 const PG = require('pg');
 const CONNECTION = 'postgres://postgres:password@localhost:5432/db_rc';
+pg.defaults.ssl = true;
 
 ROUTER.get('/', (req, res) => {
   PG.connect(CONNECTION, (err, client, done) => {
@@ -19,7 +20,6 @@ ROUTER.get('/', (req, res) => {
 ROUTER.post('/', (req, res) => {
   PG.connect(CONNECTION, (err, client, done) => {
     let match = req.body;
-
     if (err) {
       res.sendStatus(500);
     }
