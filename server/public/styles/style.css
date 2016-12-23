@@ -186,7 +186,11 @@ h2 {
 /* ========================= FORMS ========================= */
 
 .form-group {
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+}
+
+.form-group {
+  padding: 0 2px 0 2px;
 }
 
 .form-group button {
