@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <h1>Submit Match</h1>
 <div class="container">
+<<<<<<< HEAD
   <ul class="nav nav-tabs">
     <li ng-class="{'active': currentTab(1)}"><a href ng-click="setTab(1)">Match 1</a></li>
     <li ng-class="{'active': currentTab(2)}"><a href ng-click="setTab(2)">Match 2</a></li>
@@ -200,4 +201,182 @@
       </form>
     </div>
   </div>
+=======
+  <form id="matchForm" ng-submit="submitMatch(match)" name="matchForm" class="form-horizontal">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="form-group"
+          ng-class="{'has-error' : matchForm.team1.$dirty && matchForm.team1.$invalid, 'has-success' : matchForm.team1.$dirty && matchForm.team1.$valid}">
+          <input ng-model="match.team1" class="form-control" type="text" name="team1" placeholder="Team Name" required/>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <input ng-model="match.t1_p1" class="form-control" type="text" name="t1_p1" placeholder="Captain" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p2" class="form-control" type="text" name="t1_p2" placeholder="Player" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p3" class="form-control" type="text" name="t1_p3" placeholder="Player" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group">
+          <input ng-model="match.t1_p1_score" class="form-control" type="number" name="t1_p1_score" placeholder="Score" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p2_score" class="form-control" type="number" name="t1_p2_score" placeholder="Score" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p3_score" class="form-control" type="number" name="t1_p3_score" placeholder="Score" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t1_p1_goals" class="form-control" type="number" name="t1_p1_goals" placeholder="Goals" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p2_goals" class="form-control" type="number" name="t1_p2_goals" placeholder="Goals" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p3_goals" class="form-control" type="number" name="t1_p3_saves" placeholder="Goals" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t1_p1_assists" class="form-control" type="number" name="t1_p1_assists" placeholder="Assists" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p2_assists" class="form-control" type="number" name="t1_p2_assists" placeholder="Assists" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p3_assists" class="form-control" type="number" name="t1_p3_assists" placeholder="Assists" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t1_p1_saves" class="form-control" type="number" name="t1_p1_saves" placeholder="Saves" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p2_saves" class="form-control" type="number" name="t1_p2_saves" placeholder="Saves" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p3_saves" class="form-control" type="number" name="t1_p3_saves" placeholder="Saves" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t1_p1_shots" class="form-control" type="number" name="t1_p1_shots" placeholder="Shots" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p2_shots" class="form-control" type="number" name="t1_p2_shots" placeholder="Shots" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t1_p3_shots" class="form-control" type="number" name="t1_p3_shots" placeholder="Shots" />
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <input ng-model="match.team2" class="form-control" type="text" name="team2" placeholder="Team Name" required/>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <input ng-model="match.t2_p1" class="form-control" type="text" name="t2_p1" placeholder="Captain" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p2" class="form-control" type="text" name="t2_p2" placeholder="Player" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p3" class="form-control" type="text" name="t2_p3" placeholder="Player" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group">
+          <input ng-model="match.t2_p1_score" class="form-control" type="number" name="t2_p1_score" placeholder="Score" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p2_score" class="form-control" type="number" name="t2_p2_score" placeholder="Score" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p3_score" class="form-control" type="number" name="t2_p3_score" placeholder="Score" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t2_p1_goals" class="form-control" type="number" name="t2_p1_goals" placeholder="Goals" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p2_goals" class="form-control" type="number" name="t2_p2_goals" placeholder="Goals" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p3_goals" class="form-control" type="number" name="t2_p3_goals" placeholder="Goals" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t2_p1_assists" class="form-control" type="number" name="t2_p1_assists" placeholder="Assists" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p2_assists" class="form-control" type="number" name="t2_p2_assists" placeholder="Assists" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p3_assists" class="form-control" type="number" name="t2_p3_assists" placeholder="Assists" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t2_p1_saves" class="form-control" type="number" name="t2_p1_saves" placeholder="Saves" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p2_saves" class="form-control" type="number" name="t2_p2_saves" placeholder="Saves" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p3_saves" class="form-control" type="number" name="t2_p3_saves" placeholder="Saves" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="form-group">
+          <input ng-model="match.t2_p1_shots" class="form-control" type="number" name="t2_p1_shots" placeholder="Shots" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p2_shots" class="form-control" type="number" name="t2_p2_shots" placeholder="Shots" />
+        </div>
+        <div class="form-group">
+          <input ng-model="match.t2_p3_shots" class="form-control" type="number" name="t2_p3_shots" placeholder="Shots" />
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <input ng-model="match.match_date" class="form-control" type="date" name="match_date" placeholder="Match Date" />
+      <br>
+      <span ng-show="isSuccessfulPost" class="post-success-message">Match Submitted!</span>
+      <span ng-show="matchForm.$invalid && matchForm.$dirty" class="post-failure-message">Please fill out all fields.</span>
+      <button id="matchSubmit" class="btn btn-primary" type="submit" ng-disabled="matchForm.$invalid">Submit</button>
+    </div>
+
+  </form>
+>>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
 </div>
