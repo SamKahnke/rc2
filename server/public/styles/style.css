@@ -14,25 +14,17 @@ body {
 }
 
 h1 {
-<<<<<<< HEAD
   color: #fff;
   font-style: italic;
-=======
-  color: #f90;
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
   font-size: 36px;
   margin-bottom: 15px;
 }
 
 h2 {
   color: var(--text-light-grey);
-<<<<<<< HEAD
   font-style: italic;
   padding-top: 8px;
   padding-bottom: 4px;
-=======
-  padding-top: 8px;
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
   font-size: 24px;
   margin-top: 0;
   margin-bottom: 0;
@@ -141,12 +133,8 @@ h2 {
 }
 
 #brand {
-<<<<<<< HEAD
   font-style: italic;
   color: #f92;
-=======
-  color: #fff;
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
   font-size: 48px;
   line-height: 1;
   padding: 0 25px 0 0;
@@ -154,11 +142,7 @@ h2 {
 
 #page-nav-tabs a {
   font-style: italic;
-<<<<<<< HEAD
   color: var(--text-light-grey);
-=======
-  color: #ffe5cc;
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
   background-color: transparent;
   font-size: 24px;
   line-height: 2;
@@ -217,15 +201,12 @@ h2 {
   float: right;
 }
 
-<<<<<<< HEAD
 label {
   padding-top: 8px;
   color: var(--text-light-grey);
   font-style: italic;
 }
 
-=======
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
 /*Authentication*/
 .has-error .form-control {
   background-color: #fdd;

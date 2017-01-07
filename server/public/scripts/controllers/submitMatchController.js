@@ -5,7 +5,6 @@
     .module('RocketColosseum')
     .controller('SubmitMatchController', SubmitMatchController);
 
-<<<<<<< HEAD
   SubmitMatchController.$inject = ['MatchDataFactory', 'UserDataFactory', '$scope', '$timeout'];
 
   function SubmitMatchController(MatchDataFactory, UserDataFactory, $scope, $timeout) {
@@ -13,19 +12,10 @@
     // Factories
     const MATCH_DATA_FACTORY = MatchDataFactory;
     const USER_DATA_FACTORY = UserDataFactory;
-=======
-  SubmitMatchController.$inject = ['DatabaseFactory', '$scope', '$timeout'];
-
-  function SubmitMatchController(DatabaseFactory, $scope, $timeout) {
-
-    // Factories
-    const DATABASE_FACTORY = DatabaseFactory;
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
 
     // Initialize scope variables
     $scope.match = {};
     $scope.isSuccessfulPost = false;
-<<<<<<< HEAD
     $scope.currentUser;
     $scope.$parent.isLoggedIn;
     //--------------------------------------------------
@@ -68,17 +58,5 @@
     $scope.currentTab = (tabId) => $scope.tab === tabId;
 
     $scope.getCurrentUser();
-=======
-
-    // Post match, then refresh match list
-    $scope.submitMatch = (match) => {
-      DATABASE_FACTORY.submitMatch(match)
-        .then(() => {
-          $scope.isSuccessfulPost = DATABASE_FACTORY.isSuccessfulPost();
-          DATABASE_FACTORY.refreshMatches();
-          $timeout(() => $scope.isSuccessfulPost = false, 1800);
-        });
-    };
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
   };
 })();

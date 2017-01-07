@@ -2,7 +2,6 @@ const EXPRESS = require('express');
 const APP = EXPRESS();
 const BODY_PARSER = require('body-parser');
 const PATH = require('path');
-<<<<<<< HEAD
 
 // Include Authentication
 const PASSPORT = require('./strategies/loginStrategy.js');
@@ -40,28 +39,15 @@ APP.use('/register', REGISTER);
 APP.use('/user', USER);
 
 // Serve Files
-=======
-const MATCHES = require('./routes/matches');
-
-APP.use(BODY_PARSER.json());
-APP.use(BODY_PARSER.urlencoded({ extended: true }));
-
-APP.use('/matches', MATCHES);
-
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
 APP.get('/*', function (req, res) {
   let file = req.params[0] || '/views/index.html';
   res.sendFile(PATH.join(__dirname, './public', file));
 });
 
-<<<<<<< HEAD
 // App Set
 APP.set('port', process.env.PORT || 3000);
 
 // Listen
-=======
-APP.set('port', process.env.PORT || 3000);
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
 APP.listen(APP.get('port'), function () {
   console.log('Listening on port ', APP.get('port'));
 });

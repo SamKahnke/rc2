@@ -11,7 +11,6 @@
     $routeProvider
       .when('/stats', {
         templateUrl: 'templates/stats.html',
-<<<<<<< HEAD
         controller: 'StatsController',
       })
 
@@ -28,19 +27,6 @@
       .when('/user', {
         templateUrl: 'templates/user.html',
         controller: 'UserController',
-=======
-        controller: 'StatsPageController',
-      })
-
-      .when('/calendar', {
-        templateUrl: 'templates/calendar.html',
-        controller: 'CalendarPageController',
-      })
-
-      .when('/schedule-match', {
-        templateUrl: 'templates/scheduleMatch.html',
-        controller: 'ScheduleMatchController',
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
       })
 
       .when('/submit-match', {

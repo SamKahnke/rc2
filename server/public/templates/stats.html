@@ -17,15 +17,9 @@
           <table class="table table-striped table-condensed">
             <tr class="clickable">
               <th ng-click="sortByColumn('team1')">Team Name</th>
-<<<<<<< HEAD
               <th ng-click="sortByColumn('-team1Goals')">Score</th>
               <th ng-click="sortByColumn('team2')">Team Name</th>
               <th ng-click="sortByColumn('-team2Goals')">Score</th>
-=======
-              <th ng-click="sortByColumn('-team1Score')">Score</th>
-              <th ng-click="sortByColumn('team2')">Team Name</th>
-              <th ng-click="sortByColumn('-team2Score')">Score</th>
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
               <th ng-click="sortByColumn('-match_date')">Date</th>
             </tr>
           </table>
@@ -34,15 +28,9 @@
           <table class="table table-hover table-striped table-condensed" ng-repeat-start="match in matches | orderBy:columnSortValue">
             <tr ng-click="expandDetails(match.id)" class="clickable">
               <td>{{match.team1}}</td>
-<<<<<<< HEAD
               <td>{{match.team1Goals}}</td>
               <td>{{match.team2}}</td>
               <td>{{match.team2Goals}}</td>
-=======
-              <td>{{match.team1Score}}</td>
-              <td>{{match.team2}}</td>
-              <td>{{match.team2Score}}</td>
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
               <td>{{match.match_date | date}}</td>
             </tr>
           </table>
@@ -51,13 +39,8 @@
               <div class="panel-body">
                 <table class="table table-condensed">
                   <tr>
-<<<<<<< HEAD
                     <th class="th-details" colspan="2">{{match.team1}} - {{match.team1Goals}}</th>
                     <th class="th-details" colspan="2">{{match.team2}} - {{match.team2Goals}}</th>
-=======
-                    <th class="th-details" colspan="2">{{match.team1}} - {{match.team1Score}}</th>
-                    <th class="th-details" colspan="2">{{match.team2}} - {{match.team2Score}}</th>
->>>>>>> 3993de59a76985338af7d804dc847a896ec5304e
                   </tr>
                   <tr>
                     <td>{{match.t1_p1}}</td>
