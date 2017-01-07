@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Register</h1>
+  <h2 class="alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
+  <form ng-submit="registerUser()" name="registerForm" class="form-horizontal">
+    <div class="form-group"
+      ng-class="{'has-error' : registerForm.username.$dirty && registerForm.username.$invalid, 'has-success' : registerForm.username.$dirty && registerForm.username.$valid}">
+      <label for="username">Username:</label>
+      <input ng-model="user.username" class="form-control" type="text" name="username" placeholder="Enter a username" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input ng-model="user.password" class="form-control" type="text" name="password" placeholder="Enter a password" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Confirm Password:</label>
+      <input class="form-control" type="text" name="confirmPassword" placeholder="Confirm your password" required />
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Sign Up</button>
+      <a href="#stats">Cancel</a>
+    </div>
+  </form>
+</div>

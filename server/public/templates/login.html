@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Sign In</h1>
+  <h2 class="alert alert-danger" role="alert" ng-if="message !== ''">{{message}}</h2>
+  <form ng-submit="login()" name="loginForm" class="form-horizontal">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input ng-model="user.username" class="form-control" type="text" name="username" placeholder="Username" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input ng-model="user.password" class="form-control" type="password" name="username" placeholder="Password" />
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Log In</button>
+      <a href="#register">Register</a>
+    </div>
+  </form>
+</div>
